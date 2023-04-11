@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+}
+
+
+
+.a1{
+    background-color: orange;
+}
+
+
+
+
+
+
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  span{
+   color: rgb( 114, 75, 2);
+  }
+
+.m1{
+    padding-top: 160px;
+    
+
+}
+form{
+  background-color: white;
+  padding: 12px;
+  margin-left: 45px;
+}
+
+
+
+.a3{
+  background-color: rgb(252, 206, 122);
+
+}
+.a6{
+  background-color: rgb(39, 38, 38);
+}
+
+.a2{
+  background-color:rgb(39, 38, 38);
+  position: sticky;
+  z-index: 2;
+}
+.j1{
+  background-color: rgb(39, 38, 38);
+}
+/*
+.a5{
+  background-color:rgb(252, 206, 122);
+}
+*/
+.pr-3{
+  padding-right: 1rem!important;
+}
+.pl-3{
+  padding-left: 1rem!important;
+}
+
+
+
+
+.hide {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:lavender;
+  background-size:cover ;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+  opacity: 0.5;
+}
+
+.hide:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+  background-image: linear-gradient(
+    to right,
+    orange ,
+    rgb(225, 0, 255) 50%,
+    orangered 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+a:hover::before {
+  width: 100%;
+}
+a:before {
+  content: '';
+  background:orange;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+}
+a:hover {
+  background-position: 0;
+ }
+
