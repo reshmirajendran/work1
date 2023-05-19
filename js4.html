@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color:red">fruits....!!!</h1>
+    <h3 style="color:blue">select your favorit fruits:</h3>
+    <select id="fruits">
+        <option value="banana">banana</option>
+        <option value="apple">apple</option>
+        <option value="grape">grape</option>
+        </select><span id="s"></span>
+        <br>
+        <button onclick="price()">price</button>
+        <input type="text" id="r">
+    <script>
+    function price()
+    {
+        var x;
+        x=document.getElementById("fruits").value;
+        switch(x)
+        {
+            case'apple':
+            price=20;
+            break;
+            case'banana':
+            price =25;
+            break;
+            case'grape':
+            price=30;
+            break;
+            default:
+                print("invalid")
+                break;
+
+        }
+        document.getElementById('r').value=price;
+    }
+    </script>
+    
+</body>
+</html>
