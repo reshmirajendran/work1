@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1>Area</h1>
+    enter the width:<input id="n"><br>
+    enter the hight:<input id="m">
+    <br><br>
+    <button onclick="area()">area</button>
+    <p id="r"></p>
+    <script>
+        function area()
+        {
+            var n,m,a;
+            n=document.getElementById("n").value;
+            m=document.getElementById("m").value;
+            a=n*m;
+            document.getElementById("r").innerHTML="the area is"+a;
+        }
+    </script>
+</body>
+</html>
