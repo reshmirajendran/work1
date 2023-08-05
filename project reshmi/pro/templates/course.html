@@ -1,0 +1,140 @@
+{% extends 'contact.html' %}
+
+{% block body_block %}
+
+<nav class="navbar navbar2 navbar-expand-lg fixed-top  container ">
+    <a class="navbar-brand text-danger" href="#">Web Ex</a>
+    <button class="navbar-toggler custom-toggler border-warning" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon  "></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center " id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item ">
+          <a class="nav-link text-dark" href="{% url 'base' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  active" href="{% url 'course' %}">Course</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link text-dark" href="{% url 'contact' %}">Contact</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="{% url 'form1' %}">register</a>
+        </li>
+          
+          
+        {% else %}
+        <li class="nav-but ml-lg-5  mr-2 mb-sm-2 my-1">
+          <a class="btn btn-outline-danger" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-but my-1">
+          <a class="btn btn-outline-danger" href="{% url 'signup' %}">signup</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+
+<br>
+<br>
+
+<div class="bg">
+  <br>
+  <br>
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+
+  <p style=" font-style: italic; color: rgb(169, 169, 169);"> Courses/home</p>
+  <br>
+  <br>
+  <br>
+
+</div>
+
+
+  <section class="course2" id="course">
+    <div class="container-fluid d1">
+
+      
+            <h2 style="text-align: center; color: white;">Register your course</h2>  
+         
+          
+        
+
+      <div class="row justify-content-center">
+        
+        {% for c in course %}
+        <div class="col-lg-3 col-md-6 col-sm-12 mr-5">
+          <div class="course-card" style="width: 19rem;">
+           
+            <div class="course-card-body">
+              <a href="{% url 'form1' %}" class="course-btn">REGISTER</a> <br><br>
+              <h5 class="course-card-title">{{c.course_name}}</h5>
+              <p class="course-card-text">{{c.course_description}}</p>  
+            </div>
+            <div class="cost">
+              <span>$0</span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+
+      </div>
+
+    </div>
+  </section>
+  <br>
+  <br>
+ 
+  
+    
+
+        <div class="col-lg">
+          <div class="register-form">
+        
+            <form method="post">
+              {% csrf_token %}
+              <input type="text" name="phoneno" placeholder="Your Phone Number" required>
+              <input type="email" name="email" placeholder="Your Email Address" required>
+              <input type="text" name="coursename" placeholder="your course" required>
+              {% if user.is_authenticated %}
+    
+              <button><a href="{% url 'form1' %}">Submit</a></button>
+              {% else %}
+              <button><a href="{% url 'login' %}">Submit</a></button>
+              {% endif %}
+
+            </form>
+          </div>
+        </div>
+
+      
+    
+  </section>
+
+
+ 
+   
+   
+    <br>
+    <br>
+  </div>
+
+
+
+{% endblock %}
